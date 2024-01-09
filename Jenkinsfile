@@ -9,7 +9,7 @@ pipeline{
     environment {
         APP_NAME = "ensa-social-media-app"
         RELEASE = "1.0.0"
-        DOCKER_USER = "ENSAdevsecops"
+        DOCKER_USER = "ensadevsecops"
         DOCKER_PASS = 'dockerhub'
         IMAGE_NAME = "${DOCKER_USER}" + "/" + "${APP_NAME}"
         IMAGE_TAG = "${RELEASE}-${BUILD_NUMBER}"
