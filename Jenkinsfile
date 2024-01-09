@@ -79,8 +79,8 @@ pipeline{
         stage("Email Notification"){
             steps {
                 mail to : 'prvamine2@gmail.com',
-		     subject : 'test',
-		     body : 'allo'
+		     subject : 'Trivy scan completed for the lastet image docker build',
+		     body : 'Check Jenkins UI to see detailed results'
             }
          
             
