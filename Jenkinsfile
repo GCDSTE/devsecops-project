@@ -76,6 +76,16 @@ pipeline{
             }
 
         }
+        stage("Email Notification"){
+            steps {
+                mail to : 'prvamine2@gmail.com',
+		     subject : 'test',
+		     body : 'allo'
+            }
+         
+            
+        }
+        
         
     }
         
