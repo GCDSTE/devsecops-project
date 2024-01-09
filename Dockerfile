@@ -5,7 +5,6 @@ RUN mvn clean install
 
 FROM eclipse-temurin:17.0.6_10-jdk
 WORKDIR /app
-RUN ls -l /app/target/
 COPY --from=build /app/target/ensaapp.jar /app/
 EXPOSE 8080
 CMD ["java", "-jar","ensaapp.jar"]
