@@ -7,7 +7,7 @@ pipeline{
         maven 'Maven3'
     }
     environment {
-        APP_NAME = "ensa-social-media-app"
+        APP_NAME = "ensa-blog-app"
         RELEASE = "1.0.0"
         DOCKER_USER = "ensadevsecops"
         DOCKER_PASS = 'dockerhub'
@@ -71,7 +71,7 @@ pipeline{
         stage("Trivy Scan") {
              steps {
                  script {
-		              sh ('trivy image ensadevsecops/ensa-social-media-app:latest --no-progress --scanners vuln  --exit-code 0 --severity HIGH,CRITICAL --format table')
+		              sh ('trivy image ensadevsecops/ensa-blog-app:latest --no-progress --scanners vuln  --exit-code 0 --severity HIGH,CRITICAL --format table')
                 }
             }
 
@@ -79,7 +79,7 @@ pipeline{
         stage("Email Notification"){
             steps {
                 mail to : 'prvamine2@gmail.com',
-		     subject : 'Trivy scan completed for the lastet image docker build',
+		     subject : 'pipeline successful',
 		     body : 'Check Jenkins UI to see detailed results'
             }
          
